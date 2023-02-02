@@ -1,18 +1,19 @@
 {
-    "name": "api",
-    "version": "1.0.0",
+    "name": "cibertron-client",
+    "version": "0.1.1",
     "description": "An app to dispatch network data through socket",
     "main": "dist/main.js",
     "scripts": {
-        "watch": "nodemon",
+        "nodemon": "nodemon",
         "preview": "npm run build && node ./dist/main.js",
-        "build": "tsc"
+        "build": "tsc && cp .env dist/.env",
+        "make": "pkg . --target=win"
     },
     "bin": {
         "build": "./dist/main.js"
     },
     "keywords": [],
-    "author": "KuroMicho & JustinDev",
+    "author": "KuroMicho & YosstinCode",
     "license": "IMT",
     "dependencies": {
         "socket.io-client": "^4.5.4"
@@ -21,6 +22,7 @@
         "@types/express": "^4.17.15",
         "dotenv": "^16.0.3",
         "nodemon": "^2.0.20",
+        "pkg": "^5.8.0",
         "ts-node": "^10.9.1",
         "typescript": "^4.9.4"
     }

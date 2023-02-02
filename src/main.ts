@@ -24,10 +24,9 @@ socket.on('connect', () => {
         let time;
         validateCredentials(ip, username);
         socket.emit('info_user', { ip: encrypt(ip), username });
-        // console.log(username + ' connected');
+        console.log(username + ' connected');
         timerInterval = setInterval(() => {
             time = formatUptime();
-            // console.log(time);
             socket.emit('info_time', { ip: encrypt(ip), time });
         }, 1000); //emit every 1 second
     } catch (error) {
